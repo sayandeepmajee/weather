@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="./style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Oracle</title>
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="weather-container">
-        <h2>Weather App</h2>
-        <input type="text" id="city" placeholder="Enter city">
-        <button onclick="getWeather()">Search</button>
+  <main id="weather-container">
+    <h1>🌤️ Weather Oracle</h1>
 
-        <img id="weather-icon" alt="Weather Icon">
-
-        <div id="temp-div"></div>
-
-        <div id="weather-info"></div>
-
-        <div id="hourly-forecast"></div>
+    <div class="search-box">
+      <input 
+        type="text" 
+        id="city" 
+        placeholder="Search city..." 
+        aria-label="City name" 
+        autocomplete="off"
+      />
+      <button id="search-btn">Search</button>
     </div>
-  <script src="./script.js"></script> 
+
+    <section id="weather-display" class="horizontal-layout">
+      <img id="weather-icon" alt="Weather Icon" />
+      <div class="weather-data">
+        <div id="temp-div"></div>
+        <div id="weather-info"></div>
+      </div>
+    </section>
+
+    <section id="hourly-forecast" aria-label="Hourly forecast"></section>
+  </main>
+
+
+  <script src="./script.js"></script>
 </body>
 </html>
