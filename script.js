@@ -1,19 +1,14 @@
-// ===== Weather Oracle by Rio & Leah =====
 const apiKey = "1a43bcfba52fe73218f1ddcb79cb9d82";
-
 document.getElementById("search-btn").addEventListener("click", getWeather);
 document.getElementById("city").addEventListener("keypress", e => {
   if (e.key === "Enter") getWeather();
 });
-
 async function getWeather() {
   const city = document.getElementById("city").value.trim();
   const weatherIcon = document.getElementById("weather-icon");
   const tempDiv = document.getElementById("temp-div");
   const weatherInfo = document.getElementById("weather-info");
   const hourlyForecast = document.getElementById("hourly-forecast");
-
-  // Reset UI
   [tempDiv, weatherInfo, hourlyForecast].forEach(el => (el.innerHTML = ""));
   weatherIcon.style.display = "none";
 
@@ -42,8 +37,6 @@ async function getWeather() {
     showError("Something went wrong. Try again later.");
   }
 }
-
-// ===== Display Current Weather =====
 function displayWeather(data) {
   const tempDiv = document.getElementById("temp-div");
   const weatherInfo = document.getElementById("weather-info");
@@ -69,8 +62,6 @@ function displayWeather(data) {
   weatherIcon.alt = description;
   weatherIcon.style.display = "block";
 }
-
-// ===== Display Hourly Forecast =====
 function displayHourlyForecast(hourlyData) {
   const hourlyForecast = document.getElementById("hourly-forecast");
   hourlyForecast.innerHTML = "";
@@ -91,8 +82,6 @@ function displayHourlyForecast(hourlyData) {
     hourlyForecast.appendChild(hourlyItem);
   });
 }
-
-// ===== Utility Functions =====
 function showLoading() {
   const loader = document.createElement("div");
   loader.id = "loader";
